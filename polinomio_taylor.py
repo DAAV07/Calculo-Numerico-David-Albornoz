@@ -1,3 +1,4 @@
+#! /var/bin/env python3
 import math
 
 def derivada(f, h = 0.01):
@@ -20,13 +21,13 @@ def polinomio_taylor(f, x0, n):
         return p
     return polinomio
 
-f1=lambda x: math.exp(x)
+f1=lambda x: x**2 + math.cos(x)
 
-def test_polinomio(f,x,x0,n):
-    poli=polinomio_taylor(f,x0,n)
-    print("Valor Aproximado: ",poli(x),", Valor Real: ",f(x), "Error Relativo: ", f(x)-poli(x))
+def view_result_polinomio(f,x,x0,n):
+    poli = polinomio_taylor(f,x0,n)
+    print(f"Valor Aproximado: {poli(x) : 4.4f} Valor Real: {f(x) : 4.4f} Error Relativo:  {abs(f(x)-poli(x)) : 4.4f}")
     print("======================================================================")
     return poli(x)
 
 if __name__ == '__main__':
-    test_polinomio(f1,1,0,5)
+    view_result_polinomio(f1,0.3,0,3)

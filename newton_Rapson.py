@@ -14,9 +14,9 @@ def newton_raphson(f, x, ER, N):
         xi = x - ( f(x) / fd(x) )
         Ea= abs( ( xi - x ) / xi)
         if(i>1):
-            print("Iteración:", i, "Aproximación:", xi, "Error:", Ea)
+            print(f"Iteración: {i} Aproximación: {xi : 4.4f} Error: {Ea : 4.4f}")
         else:
-            print("Iteracion:",i,"Aproximacion:",xi)
+            print(f"Iteracion: {i} Aproximacion: {xi : 4.4f}")
         x=xi
         i+=1
     print("======================================================================")
