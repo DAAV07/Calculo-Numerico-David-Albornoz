@@ -15,8 +15,8 @@ def biseccion(f, a, b, Es, NI):
             b = M_Actual
         if I > 1:
             Ea = math.fabs(((M_Actual - M_Previa) / M_Actual))
+            print("I(",I,")\nPunto medio: ",M_Actual,"\nError: ",Ea)
         I += 1
-    print(M_Actual,"\n",Ea,"\n",I)
     return M_Actual
 
 if __name__ == '__main__':
