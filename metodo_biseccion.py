@@ -1,7 +1,7 @@
 #! /var/bin/env python3
 import math
 
-def biseccion(f, a, b, Es, NI):
+def bisection_method(f, a, b, Es, NI):
     Ea = 100  # Error aproximado.
     I = 1  # Contador del número de iteraciones.
     M_Actual = 0  # Punto medio actual.
@@ -15,7 +15,7 @@ def biseccion(f, a, b, Es, NI):
             b = M_Actual
         if I > 1:
             Ea = math.fabs(((M_Actual - M_Previa) / M_Actual))
-            print("Iteracion: ",I,", Punto medio: ",M_Actual,", Error: ",Ea)
+            print(f"Iteracion: {I} Punto medio: {M_Actual : 4.4f} Error: {Ea : 4.4f}")
         else:
             print("Iteracion: ",I,", Punto medio: ",M_Actual)
         I += 1
@@ -24,5 +24,5 @@ def biseccion(f, a, b, Es, NI):
 
 if __name__ == '__main__':
 	f = lambda x: math.exp(x) - (3* pow(x,2))
-	biseccion(f, 0, 1, 0.05, 20)
+	bisection_method(f, 0, 1, 0.05, 20)
 	
