@@ -26,13 +26,36 @@ def transformExprection(f):
 	f = f.replace('sin','math.sin')
 	f = f.replace('cos','math.cos')
 	f = f.replace('log','math.log')
-	f = f.replace('ln','math.ln')
 	return f
 
 f = input("ingrese la funcion f(x):")
 f = transformExprection(f)
-a = float(input("ingrese el valor del punto a:"))
-b = float(input("ingrese el valor del punto b:"))
-Es = float(input("ingrese el vlaor de Error:"))
-NI = int(input("ingrese el numero limite de iteraciones:"))
+op = 0
+while op != 1:
+	try:
+		a = float(input("ingrese el valor del punto a:"))
+		op = 1
+	except Exception:
+		print("error no se aceptan caracteres, solo numeros reales")
+op = 0
+while op != 1:
+	try:
+		b = float(input("ingrese el valor del punto b:"))
+		op = 1
+	except Exception:
+		print("error no se aceptan caracteres, solo numeros reales")
+op = 0
+while op != 1:
+	try:
+		Es = float(input("ingrese el vlaor de Error:"))	
+		op = 1
+	except Exception:
+		print("error no se aceptan caracteres, solo numeros reales")
+op = 0
+while op != 1:
+	try:
+		NI = int(input("ingrese el numero limite de iteraciones:"))
+		op = 1
+	except Exception:
+		print("error no se aceptan caracteres, solo numeros reales")
 biseccion(f, a, b, Es, NI)
